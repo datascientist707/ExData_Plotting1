@@ -12,10 +12,11 @@ rm(alldata)
 datetime <- paste(as.Date(data$Date), data$Time)
 data$Datetime <- as.POSIXct(datetime)
 
-# Plot 1
-hist(data$Global_active_power, main="Global Active Power", 
-     xlab="Global Active Power (kilowatts)", ylab="Frequency", col="Red")
+# Plot 2
+plot(data$Global_active_power~data$Datetime, type="l",
+     ylab="Global Active Power (kilowatts)", xlab="")
 
 # Saving to file
-dev.copy(png, file="plot1.png", height=480, width=480)
+dev.copy(png, file="plot2.png", height=480, width=480)
 dev.off()
+
